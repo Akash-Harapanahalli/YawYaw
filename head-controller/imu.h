@@ -3,7 +3,7 @@
 
 /**
  * imu.hpp
- * This header creates the imu class to handle all calls to the 
+ * This header creates the imu class that handles all future calls to the SparkFunLSM9DS1 API.
  * The IMU used for this project is the LSM9DS1 from sparkfun. Refer to their data sheet for more information.
  */
 
