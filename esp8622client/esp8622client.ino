@@ -21,12 +21,12 @@ int sensorValue0 = 0;
 int sensorValue1 = 0;        
 int sensorValue2 = 0;        
 int sensorValue3 = 0;        
-String sensor_values;
 
 ESP8266WebServer server(80);
 
 void handleSentVar() {
 
+  String sensor_values;
   if (server.hasArg("sensor_reading"))
   {
     sensor_values = server.arg("sensor_reading");
