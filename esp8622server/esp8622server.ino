@@ -72,12 +72,7 @@ if(digitalRead(btn3) == HIGH) sensorValue3 = 0;
   // We now create a URI for the request. Something like /data/?sensor_reading=123
   String url = "/data/";
   url += "?sensor_reading=";
-  url +=  "{\"sensor0_reading\":\"sensor0_value\",\"sensor1_reading\":\"sensor1_value\",\"sensor2_reading\":\"sensor2_value\",\"sensor3_reading\":\"sensor3_value\"}";
-
-  url.replace("sensor0_value", String(sensorValue0));
-  url.replace("sensor1_value", String(sensorValue1));
-  url.replace("sensor2_value", String(sensorValue2));
-  url.replace("sensor3_value", String(sensorValue3));
+  url +=  sensorValue0;
 
   Serial.println("sending    ");
   // This will send the request to the server

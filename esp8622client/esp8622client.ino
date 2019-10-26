@@ -3,8 +3,6 @@
 
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
-#include <ArduinoJson.h>
-
 
 
 #define led0 16               //D0
@@ -12,7 +10,7 @@
 #define led2 4                //D2
 #define led3 0                //D3
 
-DynamicJsonBuffer jsonBuffer;
+
 
 const char *ssid      = "GTother";
 const char *password  = "GeorgeP@1927";
@@ -32,17 +30,14 @@ void handleSentVar() {
     sensor_values = server.arg("sensor_reading");
     Serial.println(sensor_values);
   }
-  JsonObject& root = jsonBuffer.parseObject(sensor_values);
+
 //  if (!root.success()) {
 //    Serial.println("parseObject() failed");
 //    return;
 //  }
 //  if (root.success())
 //  {
-    sensorValue0          = root["sensor0_reading"].as<int>();
-    sensorValue1          = root["sensor1_reading"].as<int>();
-    sensorValue2          = root["sensor2_reading"].as<int>();
-    sensorValue3          = root["sensor3_reading"].as<int>();
+    sensorValue0          = sensor_values.toInt();
 
 //  }
 
