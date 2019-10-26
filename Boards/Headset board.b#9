@@ -186,10 +186,10 @@
 </layers>
 <board>
 <plain>
-<wire x1="0" y1="0" x2="160" y2="0" width="0" layer="20"/>
-<wire x1="160" y1="0" x2="160" y2="100" width="0" layer="20"/>
-<wire x1="160" y1="100" x2="0" y2="100" width="0" layer="20"/>
-<wire x1="0" y1="100" x2="0" y2="0" width="0" layer="20"/>
+<wire x1="25.4" y1="0" x2="86.34" y2="0" width="0" layer="20"/>
+<wire x1="86.34" y1="0" x2="86.34" y2="84.76" width="0" layer="20"/>
+<wire x1="86.34" y1="84.76" x2="25.4" y2="84.76" width="0" layer="20"/>
+<wire x1="25.4" y1="84.76" x2="25.4" y2="0" width="0" layer="20"/>
 </plain>
 <libraries>
 <library name="tango">
