@@ -41,10 +41,8 @@ void loop() {
   int camTilt = analogRead(cameraTiltPot);
   int camPan = analogRead(cameraPanPot);
 
-//  cameraTilt.step( main_imu.angle_z - (270.0 / 1024.0) * (camTilt - 800) );
-//  cameraPan .step( main_imu.angle_y - (270.0 / 1024.0) * (camPan - 512) );
-
-  cameraPan.setPower(200);
+  cameraTilt.step( main_imu.angle_z - (270.0 / 1024.0) * (camTilt - 800) );
+  cameraPan .step( main_imu.angle_y - (270.0 / 1024.0) * (camPan - 512) );
 
   delay(LOOP_DELAY);
 }
