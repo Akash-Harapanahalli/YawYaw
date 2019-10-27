@@ -10,6 +10,7 @@
  */
 
 #include "PID.h"
+#include <Arduino.h>
 
 PID::PID(){}
 
@@ -42,8 +43,9 @@ int PID::step(float error){
     int power = error * this->kP + this->integral * this->kI + this->derivative * this->kD;
 
     // Capping the power at max_power
-    (power >  max_power) ?  max_power : power;
-    (power < -max_power) ? -max_power : power;
+    power = (power >  max_power) ?  max_power : power;
+    power = (power < -max_power) ? -max_power : power;
+    Serial.println(power);
     return power;
 } 
 

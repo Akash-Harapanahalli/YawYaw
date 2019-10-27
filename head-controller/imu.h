@@ -22,7 +22,7 @@ private:
     int dt;
 
 public:
-    float angle_y, angle_z;
+    int angle_y, angle_z;
 
     /**
      * Sets up the new imu object with the M_CS and AG_CS pins specified.

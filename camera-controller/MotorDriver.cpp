@@ -20,6 +20,8 @@ void MotorDriver::setup(int _in1, int _in2){
 void MotorDriver::setup(int _in1, int _in2, float _kP, float _kI, float _kD, int _dt){
     this->in1 = _in1;
     this->in2 = _in2;
+    pinMode(_in1, OUTPUT);
+    pinMode(_in2, OUTPUT);
     this->pid.setConstants(_kP, _kI, _kD, _dt);
 }
 
