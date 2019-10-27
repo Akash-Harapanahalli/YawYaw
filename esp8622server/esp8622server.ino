@@ -74,12 +74,13 @@ if(digitalRead(btn3) == HIGH) sensorValue3 = 0;
   String url = "/data/";
   url += "?sensor_reading=";
   url +=  sensorValue0;
-
+  Serial.println(url);
   Serial.println("sending    ");
   // This will send the request to the server
   client.print(String("GET ") + url + " HTTP/1.1\r\n" +
                "Host: " + host + "\r\n" +
                "Connection: close\r\n\r\n");
+
   Serial.println("sent");
   unsigned long timeout = millis();
   while (client.available() == 0) {
