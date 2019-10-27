@@ -32,14 +32,14 @@ void MotorDriver::setup(int _in1, int _in2, float _kP, float _kI, float _kD, int
  */
 void MotorDriver::setPower(int power){
     if(power > 0){
-        digitalWrite(this->in1, LOW);
+        analogWrite(this->in1, LOW);
         analogWrite(this->in2, power);
     } else if(power < 0){
-        analogWrite(this->in1, power);
-        digitalWrite(this->in2, LOW);
+        analogWrite(this->in1, abs(power));
+        analogWrite(this->in2, LOW);
     } else {
-        digitalWrite(this->in1, LOW);
-        digitalWrite(this->in2, LOW);
+        analogWrite(this->in1, LOW);
+        analogWrite(this->in2, LOW);
     }
 }
 

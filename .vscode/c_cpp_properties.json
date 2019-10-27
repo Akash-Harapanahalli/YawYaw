@@ -5,7 +5,8 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "C:/Users/akash/Documents/Arduino/libraries/**",
-                "C:/Program Files (x86)/Arduino/libraries/**"
+                "C:/Program Files (x86)/Arduino/libraries/**",
+                "C:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries/Wire/src"
             ],
             "defines": [
                 "_DEBUG",
