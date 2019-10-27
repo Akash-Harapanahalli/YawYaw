@@ -1,7 +1,9 @@
 //hammadiqbal12@gmail.com
 
 #include <ESP8266WiFi.h>
-
+#include <iostream> 
+#include <thread> 
+#include <unistd.h>
 
 #define btn0 16
 #define btn1 5
@@ -44,21 +46,15 @@ void setup() {
   Serial.println(WiFi.localIP());
 
 }
-
+std::thread thread1;
 void loop() {
-  
-  Serial.println("loop beginning");
-if(digitalRead(btn0) == LOW) sensorValue0 = 1;
-if(digitalRead(btn1) == LOW) sensorValue1 = 1;
-if(digitalRead(btn2) == LOW) sensorValue2 = 1;
-if(digitalRead(btn3) == LOW) sensorValue3 = 1;
+  thread1{serverSend,null};
+  usleep(100000);
+  thread1.~thread();
+}
 
-if(digitalRead(btn0) == HIGH) sensorValue0 = 0;
-if(digitalRead(btn1) == HIGH) sensorValue1 = 0;
-if(digitalRead(btn2) == HIGH) sensorValue2 = 0;
-if(digitalRead(btn3) == HIGH) sensorValue3 = 0;
-
-
+void serverSend(){
+    Serial.println("loop beginning");
   // Use WiFiClient class to create TCP connections
   WiFiClient client;
   const char * host = "143.215.106.77";            //default IP address
